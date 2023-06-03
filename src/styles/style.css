@@ -140,6 +140,7 @@ dialog::backdrop {
 dialog > div{
     display: flex;
     flex-direction: column;
+    /* font-size: 2rem; */
 }
 
 dialog > div > div:not(:last-child){
@@ -159,5 +160,5 @@ dialog button{
 }
 
 dialog input,dialog textarea{
-    width: 9rem;
+    width: 20rem;
 }

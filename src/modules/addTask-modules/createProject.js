@@ -4,6 +4,7 @@ export default function createProject(parentDiv){
     projectLabel.textContent = 'Project';
     let projectInput = document.createElement("input");
     projectInput.setAttribute('type','text');
+    projectInput.setAttribute('id','projectInput');
     project.append(projectLabel,projectInput);
     parentDiv.appendChild(project);
 

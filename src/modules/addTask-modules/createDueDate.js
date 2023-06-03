@@ -4,6 +4,7 @@ export default function createDueDate(parentDiv){
     dueDateLabel.textContent = 'Due Date';
     let dueDateInput = document.createElement('input');
     dueDateInput.setAttribute('type','date');
+    dueDateInput.setAttribute('id','dueDateInput');
     dueDate.append(dueDateLabel,dueDateInput);
     parentDiv.appendChild(dueDate);
 }

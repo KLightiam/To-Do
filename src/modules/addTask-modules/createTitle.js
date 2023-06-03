@@ -4,6 +4,7 @@ export default function createTitle(parentDiv){
     titleLabel.textContent = 'Title';
     let titleInput = document.createElement("input");
     titleInput.setAttribute('type','text');
+    titleInput.setAttribute('id','titleInput');
     title.append(titleLabel,titleInput);
     parentDiv.appendChild(title);
 }

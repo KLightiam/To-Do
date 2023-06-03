@@ -1,9 +1,17 @@
+import createButtonAction from './createButtonAction';
+
+
 export default function createButtons(parentDiv){
     let buttons = document.createElement('div');
     let cancelButton = document.createElement('button');
     cancelButton.textContent = 'Cancel';
+    cancelButton.classList.add('cancelButton');
     let createButton = document.createElement("button");
-    createButton.textContent = "Create"
+    createButton.textContent = "Create";
+    createButton.classList.add('createButton');
     buttons.append(cancelButton,createButton);
     parentDiv.appendChild(buttons);
+
+    createButton.addEventListener('click',createButtonAction);
+
 }
