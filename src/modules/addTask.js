@@ -5,6 +5,8 @@ import createNote from "./addTask-modules/createNote";
 import createDueDate from "./addTask-modules/createDueDate";
 import createPriority from "./addTask-modules/createPriority";
 import createButtons from "./addTask-modules/createButtons";
+import escapeKey from "./closingDialog-modules/escapeKey";
+
 
 export default function addTask(){
     let content = document.querySelector('.content');
@@ -22,4 +24,5 @@ export default function addTask(){
     dialog.appendChild(formDiv);
     content.appendChild(dialog);
     dialog.showModal();
+    dialog.addEventListener('keydown',escapeKey);
 }

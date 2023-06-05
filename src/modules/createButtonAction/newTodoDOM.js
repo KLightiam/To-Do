@@ -33,6 +33,7 @@ export default function newToDoDOM(toDoObject){
 
     task.append(taskLeftSide,taskRightSide);
     tasks.appendChild(task);
+    
 
 
 }

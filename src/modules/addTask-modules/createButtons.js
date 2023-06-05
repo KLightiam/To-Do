@@ -13,5 +13,8 @@ export default function createButtons(parentDiv){
     parentDiv.appendChild(buttons);
 
     createButton.addEventListener('click',createButtonAction);
-
+    cancelButton.addEventListener('click',() => {
+        let dialog = document.querySelector('dialog');
+        dialog.remove();
+    })
 }
