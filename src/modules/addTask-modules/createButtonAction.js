@@ -10,6 +10,8 @@ export default function createButtonAction(event){
     projects[counter + ''] = toDoObject();
     console.log(projects);
     newToDoDOM(toDoObject());
+
+    
     counter++;
     let dialog = document.querySelector('dialog');
     dialog.remove();

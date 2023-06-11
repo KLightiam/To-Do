@@ -162,3 +162,45 @@ dialog button{
 dialog input,dialog textarea{
     width: 20rem;
 }
+
+.noteDiv{
+    min-width: 6rem;
+    min-height: 6rem;
+}
+
+.noteDiv h1{
+    border-bottom: 1px solid black;
+}
+
+.noteDiv p{
+    max-inline-size: 70ch;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    /* overflow: hidden; */
+    /* text-overflow:ellipsis; */
+    /* max-width: 30ch; */
+}
+
+
+
+.detailsDialog > div{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.detailsDialog > h1{
+    text-align: center;
+}
+
+
+.detailsDialog > div > p {
+    min-width:6rem;
+    border: 1px solid rgb(50, 44, 4);
+    border-radius: 2px;
+    margin: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    padding: 1px;
+}
