@@ -5,6 +5,8 @@ import notesImage from "../../assets/icons/notes.png";
 import escapeKey from "../closingDialog-modules/escapeKey";
 
 
+
+
 export default function newToDoDOM(toDoObject){
     let tasks = document.querySelector('.tasks');
     let task = document.createElement('div');
@@ -113,6 +115,114 @@ export default function newToDoDOM(toDoObject){
    
     let edit = new Image();
     edit.src = editImage;
+    edit.addEventListener('click',()=>{
+        let content = document.querySelector('.content');
+        let dialog = document.createElement('dialog');
+
+        let formDiv = document.createElement('div');
+
+
+        let title = document.createElement('div');
+        let titleLabel = document.createElement('label');
+        titleLabel.textContent = 'Title';
+        let titleInput = document.createElement("input");
+        titleInput.setAttribute('type','text');
+        titleInput.setAttribute('id','titleInput');
+        titleInput.value = toDoObject.title
+        title.append(titleLabel,titleInput);
+        formDiv.appendChild(title);
+
+
+        let description = document.createElement('div');
+        let descriptionLabel = document.createElement('label');
+        descriptionLabel.textContent = 'Description';
+        let descriptionInput = document.createElement("textarea");
+        descriptionInput.setAttribute('id','descriptionInput');
+        descriptionInput.value = toDoObject.description;
+        description.append(descriptionLabel,descriptionInput);
+        formDiv.appendChild(description);
+
+
+        let project = document.createElement('div');
+        let projectLabel = document.createElement('label');
+        projectLabel.textContent = 'Project';
+        let projectInput = document.createElement("input");
+        projectInput.setAttribute('type','text');
+        projectInput.value = toDoObject.project;
+        projectInput.setAttribute('id','projectInput');
+        project.append(projectLabel,projectInput);
+        formDiv.appendChild(project);
+
+
+        let note = document.createElement('div');
+        let noteLabel = document.createElement('label');
+        noteLabel.textContent = 'Note';
+        let noteInput = document.createElement("textarea");
+        noteInput.setAttribute('id','noteInput');
+        noteInput.value = toDoObject.note;
+        note.append(noteLabel,noteInput);
+        formDiv.appendChild(note);
+
+
+        let dueDate = document.createElement('div');
+        let dueDateLabel = document.createElement('label');
+        dueDateLabel.textContent = 'Due Date';
+        let dueDateInput = document.createElement('input');
+        dueDateInput.setAttribute('type','date');
+        dueDateInput.setAttribute('id','dueDateInput');
+        dueDateInput.value = toDoObject.dueDate;
+        dueDate.append(dueDateLabel,dueDateInput);
+        formDiv.appendChild(dueDate);
+
+
+        let priority = document.createElement('div');
+        let priorityLabel = document.createElement('label');
+        priorityLabel.textContent = 'Priority';
+        let priorityInput = document.createElement("input");
+        priorityInput.setAttribute('type','text');
+        priorityInput.setAttribute('id','priorityInput');
+        priority.append(priorityLabel,priorityInput);
+        formDiv.appendChild(priority);
+
+        let buttons = document.createElement('div');
+        let cancelButton = document.createElement('button');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('cancelButton');
+        let editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.classList.add('createButton');
+        buttons.append(cancelButton,editButton);
+        formDiv.appendChild(buttons);
+    
+        editButton.addEventListener('click',()=>{
+            toDoObject.title = titleInput.value;
+            toDoObject.description = descriptionInput.value;
+            toDoObject.project = projectInput.value;
+            toDoObject.note = noteInput.value;
+            toDoObject.dueDate = dueDateInput.value;
+            toDoObject.priority = priorityInput.value;
+
+            para.textContent = titleInput.value;
+            date.textContent = dueDateInput.value;
+
+            let dialog = document.querySelector('dialog');
+            dialog.remove();
+
+
+        });
+        cancelButton.addEventListener('click',() => {
+            let dialog = document.querySelector('dialog');
+            dialog.remove();
+        })
+
+
+        dialog.appendChild(formDiv);
+        content.appendChild(dialog);
+        dialog.showModal();
+        dialog.addEventListener('keydown',escapeKey);
+
+    })
+
     
     
     let del = new Image();
