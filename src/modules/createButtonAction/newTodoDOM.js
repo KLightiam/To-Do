@@ -1,13 +1,14 @@
 import deleteClose from "../../assets/icons/delete-closed.png";
 import editImage from "../../assets/icons/edit.png";
 import notesImage from "../../assets/icons/notes.png";
+import deleteOpen from "../../assets/icons/delete-open.png";
 // import viewNote from "../toDoButtons/viewNote";
 import escapeKey from "../closingDialog-modules/escapeKey";
 
 
 
 
-export default function newToDoDOM(toDoObject){
+export default function newToDoDOM(toDoObject,allProjects,counter){
     let tasks = document.querySelector('.tasks');
     let task = document.createElement('div');
     task.classList.add('task');
@@ -181,6 +182,7 @@ export default function newToDoDOM(toDoObject){
         let priorityInput = document.createElement("input");
         priorityInput.setAttribute('type','text');
         priorityInput.setAttribute('id','priorityInput');
+        priorityInput.value = toDoObject.priority;
         priority.append(priorityLabel,priorityInput);
         formDiv.appendChild(priority);
 
@@ -207,6 +209,10 @@ export default function newToDoDOM(toDoObject){
 
             let dialog = document.querySelector('dialog');
             dialog.remove();
+            // delete allProjects[counter + ''];
+            allProjects[counter + ''] = toDoObject;
+            console.log(allProjects);
+
 
 
         });
@@ -227,6 +233,19 @@ export default function newToDoDOM(toDoObject){
     
     let del = new Image();
     del.src = deleteClose;
+    del.addEventListener('mouseenter',()=>{
+        del.src = deleteOpen;
+    })
+    del.addEventListener('mouseout',()=>{
+        del.src = deleteClose;
+    })
+
+    del.addEventListener('click',(e)=>{
+        // console.log(e);
+        task.remove();
+        delete allProjects[counter + ""];
+        console.log(allProjects)
+    })
 
     taskRightSide.append(note,details,date,edit,del);
 
