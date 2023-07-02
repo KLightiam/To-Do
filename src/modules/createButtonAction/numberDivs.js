@@ -1,9 +1,11 @@
-import {isToday,isTomorrow,subDays} from "date-fns";
+import {differenceInCalendarDays, isToday,isTomorrow,subDays} from "date-fns";
 
 
 
 export default function numberDivs(projects){
-    // clearInterval(viewInterval);
+    // if(viewInterval){
+    //     clearInterval(viewInterval);
+    // }
     
     let homeNum = document.querySelector('#home > .number');
     let todayNum = document.querySelector('#today > .number');
@@ -13,6 +15,7 @@ export default function numberDivs(projects){
     let recurringTasksNum = document.querySelector('#recurring-tasks > .number');
 
     homeNum.textContent = Object.keys(projects).length;
+
 
 
 
@@ -26,10 +29,18 @@ export default function numberDivs(projects){
 
     let timer = 1000;
     let viewInterval = setInterval(function(){
-        clearInterval(viewInterval);
+        // clearInterval(viewInterval);
         let todayNumCounter = 0;
         let tomorrowNumCounter = 0;
         let upcomingNumCounter = 0;
+        let recurringNumCounter = 0;
+
+        todayNum.textContent = 0;
+        tomorrowNum.textContent = 0;
+        upcomingNum.textContent = 0;
+        // projectsNum.textContent = 0;
+        recurringTasksNum.textContent = 0;
+
         for(let toDo of Object.values(projects)){
             if(isToday(new Date(toDo.dueDate))){
                 todayNumCounter++;
@@ -42,6 +53,11 @@ export default function numberDivs(projects){
             else if((new Date(toDo.dueDate).getTime()) > (new Date().getTime())){
                 upcomingNumCounter++;
                 upcomingNum.textContent = upcomingNumCounter;
+            }
+            else if((differenceInCalendarDays(new Date(),new Date(toDo.dueDate)) >= 1) && (!(toDo.checkBox == 'checked'))){
+                recurringNumCounter++;
+                recurringTasksNum.textContent = recurringNumCounter;
+                // console.log(recurringNumCounter);
             }
             
         }    

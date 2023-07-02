@@ -52,9 +52,11 @@ body{
 }
 
 .number{
-    width: 15px;
+    width: 20px;
     background-color: rgb(255, 230, 0);
     border-radius: 10px;
+    height: 20px;
+    text-align: center;
 }
 
 #add-task{
