@@ -14,8 +14,29 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
     task.classList.add('task');
     let taskLeftSide = document.createElement('div');
     taskLeftSide.classList.add('task-left-side');
+    
+    
     let checkBox = document.createElement('input');
     checkBox.setAttribute('type','checkbox');
+    if(toDoObject.checkBox == 'checked'){
+        checkBox.checked = true;
+        console.log(checkBox);
+        
+    }
+
+    checkBox.addEventListener('change',()=>{
+        if(checkBox.checked){
+            toDoObject.checkBox = 'checked';
+            allProjects[counter + ""] = toDoObject;
+        }
+        else if(!(checkBox.checked)){
+            toDoObject.checkBox = 'unchecked';
+            allProjects[counter + ""] = toDoObject;
+        }
+        console.log(toDoObject);
+        console.log(allProjects);
+    })
+
     let para = document.createElement('p');
     para.textContent = toDoObject.title;
     para.classList.add('task-text');
