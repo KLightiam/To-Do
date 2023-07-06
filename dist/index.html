@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./to-do.png" type="image/x-icon">
+    <title>To-Do</title>
+</head>
+<body>
+    <div class="content">
+        <div class="header">WHAT TO-DO</div>
+        <div class="sidebar">
+            <div id="home">
+                <p class="text">Home</p> 
+                <span class="number">0</span>
+            </div>
+            <div id="today">
+                <p class="text">Today</p>
+                <span class="number">0</span>
+            </div>
+            <div id="tomorrow">
+                <p class="text">Tomorrow</p>
+                <span class="number">0</span>
+            </div>
+            <div id="upcoming">
+                <p class="text">Upcoming</p>
+                <span class="number">0</span>
+            </div>
+            <div id="projects">
+                <details>
+                    <summary>Projects </summary>
+                </details>
+                <span class="number">0</span>
+            </div>
+            <details id="priority">
+                <summary>
+                    Priority
+                </summary>
+                <ul>
+                    <li class="low">Low</li>
+                    <li class="medium">Medium</li>
+                    <li class="high">High</li>
+                </ul>
+            </details>
+            <div id="recurring-tasks">
+                <p class="text">Recurring Tasks</p>
+                <span class="number">0</span>
+            </div>
+            <div id="add-task"></div>
+        </div>
+        <div class="main">
+            <div class="tasks">
+
+            </div>
+            <div id="add-task-main">
+                <button>+ Add Task</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
