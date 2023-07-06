@@ -3,7 +3,7 @@ import AllProjects from "../allProjects";
 import newToDoDOM from '../createButtonAction/newTodoDOM';
 import numberDivs from "../createButtonAction/numberDivs";
 import sidebarButtonsAction from "../createButtonAction/sidebarButtonsAction";
-
+import projectsAction from "../createButtonAction/projectsActions";
 
 let projects = {};
 let counter = 0
@@ -18,6 +18,7 @@ export default function createButtonAction(event){
 
     numberDivs(projects);
     sidebarButtonsAction(newToDoDOM,projects,counter);
+    
     
 
 

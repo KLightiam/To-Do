@@ -75,6 +75,20 @@ body{
     
 }
 
+#priority{
+    cursor: pointer;
+}
+
+li{
+    list-style-type: none;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+li:hover{
+    color: aqua;
+}
+
 
     /* main content section */
 .main{
