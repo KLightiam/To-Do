@@ -9,6 +9,10 @@ import escapeKey from "../closingDialog-modules/escapeKey";
 
 
 export default function newToDoDOM(toDoObject,allProjects,counter){
+    let homeNum = document.querySelector('#home > .number');
+    
+    
+    
     let tasks = document.querySelector('.tasks');
     let task = document.createElement('div');
     task.classList.add('task');
@@ -265,6 +269,7 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
         // console.log(e);
         task.remove();
         delete allProjects[counter + ""];
+        homeNum.textContent = Number(homeNum.textContent) - 1;
         // console.log(allProjects)
     })
 

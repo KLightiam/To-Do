@@ -3,11 +3,13 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-size: 1.5rem;
 }
 
 body{
     height:100vh;
     background-color: antiquewhite;
+    /* font-size: 2rem; */
 }
 
 .content{
@@ -23,12 +25,20 @@ body{
 
     /* header section */
 .header{
+    position: relative;
     text-align: center;
     grid-area: header;
     /* border-bottom: 1px solid black; */
     box-shadow:1px 1px 2px black;
-    background-color: rgb(170, 182, 147);
-    
+    background-color: rgb(170, 182, 147);   
+}
+
+.header span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3rem;
 }
 
 
@@ -52,25 +62,25 @@ body{
 }
 
 .number{
-    width: 20px;
+    width: 35px;
     background-color: rgb(255, 230, 0);
-    border-radius: 10px;
-    height: 20px;
+    border-radius: 15px;
+    height: 35px;
     text-align: center;
 }
 
 #add-task{
     margin-top: auto;
     background-color: aqua;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 25px;
     box-shadow: 1px 1px 1px 0px rgb(39, 108, 113);
 }
 
 #add-task > img{
-    width: 30px;
-    height: 30px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
     
 }
@@ -134,12 +144,18 @@ li:hover{
 }
 
 .task img{
-    width: 20px;
-    height: 18px;
+    width: 42px;
+    height: 40px;
 }
 
 .task > * > :not(p){
     cursor: pointer;
+}
+
+input[type='checkbox']{
+    height: 35px;
+    width: 30px;
+    margin: 2px;
 }
 
 
@@ -186,12 +202,13 @@ dialog button{
 }
 
 dialog input,dialog textarea{
-    width: 20rem;
+    width: 35rem;
+    min-height: 3rem;
 }
 
 .noteDiv{
-    min-width: 6rem;
-    min-height: 6rem;
+    min-width: 12rem;
+    min-height: 12rem;
 }
 
 .noteDiv h1{
@@ -222,7 +239,7 @@ dialog input,dialog textarea{
 
 
 .detailsDialog > div > p:first-child {
-    min-width:6rem;
+    min-width:12rem;
     border-right: 1px solid rgb(50, 44, 4);
     border-radius: 2px;
     /* margin: 2px; */
@@ -233,7 +250,7 @@ dialog input,dialog textarea{
 }
 
 .detailsDialog > div > p:last-child {
-    min-width:6rem;
+    min-width:12rem;
     border-top: 1px solid rgb(50, 44, 4);
     border-radius: 2px;
     /* margin: 2px; */
