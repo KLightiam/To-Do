@@ -122,6 +122,7 @@ export default function sidebarButtonsAction(newToDoDOM,projects,counter){
             for(let toDo of Object.values(projects)){
                 if(toDo.project.toLowerCase() == projectDiv.textContent.toLowerCase()){
                     newToDoDOM(toDo,projects,counter);
+                    
                 }
             }
         })
