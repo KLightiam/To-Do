@@ -14,6 +14,7 @@ export default function sidebarButtonsAction(newToDoDOM,projects,counter){
     let lowPriorityButton = document.querySelector('.low');
     let mediumPriorityButton = document.querySelector('.medium');
     let highPriorityButton = document.querySelector('.high');
+    let projectDivs = document.querySelectorAll('#projects > details > div');
 
 
 
@@ -108,5 +109,21 @@ export default function sidebarButtonsAction(newToDoDOM,projects,counter){
             }
         }
 
+    })
+
+
+    projectDivs.forEach((projectDiv)=>{
+        projectDiv.addEventListener('click',(e)=>{
+            // e.preventDefault();
+            // console.log(e);
+            tasks.textContent = "";
+            addTaskButton.style.display = 'none';
+            addTaskDiv.style.display = 'none';
+            for(let toDo of Object.values(projects)){
+                if(toDo.project.toLowerCase() == projectDiv.textContent.toLowerCase()){
+                    newToDoDOM(toDo,projects,counter);
+                }
+            }
+        })
     })
 }

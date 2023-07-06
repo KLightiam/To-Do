@@ -20,7 +20,7 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
     checkBox.setAttribute('type','checkbox');
     if(toDoObject.checkBox == 'checked'){
         checkBox.checked = true;
-        console.log(checkBox);
+        // console.log(checkBox);
         
     }
 
@@ -33,8 +33,8 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
             toDoObject.checkBox = 'unchecked';
             allProjects[counter + ""] = toDoObject;
         }
-        console.log(toDoObject);
-        console.log(allProjects);
+        // console.log(toDoObject);
+        // console.log(allProjects);
     })
 
     let para = document.createElement('p');
@@ -70,7 +70,7 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
     let details = document.createElement('button');
     details.textContent = "Details";
     details.addEventListener('click',()=>{
-        console.log(toDoObject);
+        // console.log(toDoObject);
         let content = document.querySelector('.content');
         let dialog = document.createElement('dialog');
         dialog.classList.add('detailsDialog');
@@ -232,7 +232,7 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
             dialog.remove();
             // delete allProjects[counter + ''];
             allProjects[counter + ''] = toDoObject;
-            console.log(allProjects);
+            // console.log(allProjects);
 
 
 
@@ -265,7 +265,7 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
         // console.log(e);
         task.remove();
         delete allProjects[counter + ""];
-        console.log(allProjects)
+        // console.log(allProjects)
     })
 
     taskRightSide.append(note,details,date,edit,del);

@@ -16,16 +16,30 @@ export default function numberDivs(projects){
 
     homeNum.textContent = Object.keys(projects).length;
 
+    let projectDivs = document.querySelectorAll('#projects > details > div');
 
 
 
     let NumCounter = 0;
     for(let toDo of Object.values(projects)){
         if(toDo.project){
-            NumCounter++;
+            if(projectDivs.length == 0){
+                NumCounter++;
+            }
+            for(let i=0; i < projectDivs.length;){
+                if(toDo.project.toLowerCase() != projectDivs[i].textContent.toLowerCase()){
+                    i++;
+                }
+                else{
+                    break;
+                }
+                if(i == projectDivs.length){
+                    NumCounter++;
+                }
         }
-        projectsNum.textContent = NumCounter;
+        projectsNum.textContent = NumCounter + projectDivs.length;
     }
+}
 
     let timer = 1000;
     let viewInterval = setInterval(function(){
