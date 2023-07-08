@@ -158,6 +158,30 @@ input[type='checkbox']{
     margin: 2px;
 }
 
+.tooltip{
+    visibility: hidden;
+}
+
+.noteDiv,.editDiv{
+    position: relative;
+}
+
+/* .noteDiv:hover::after{
+    visibility: visible;
+    content: "notes";
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+
+}
+
+.editDiv:hover::after{
+    position:absolute;
+    z-index: 1;
+    content: 'edit';
+    position: absolute;
+} */
+
 
 #add-task-main{
     margin: 10px auto;

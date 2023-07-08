@@ -30,10 +30,14 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
 
     checkBox.addEventListener('change',()=>{
         if(checkBox.checked){
+            checkBox.nextElementSibling.setAttribute('style',"text-decoration:line-through");
+            checkBox.parentElement.parentElement.setAttribute('style',"opacity:0.5");
             toDoObject.checkBox = 'checked';
             allProjects[counter + ""] = toDoObject;
         }
         else if(!(checkBox.checked)){
+            checkBox.nextElementSibling.setAttribute('style',"text-decoration:none");
+            checkBox.parentElement.parentElement.setAttribute('style',"opacity:1");
             toDoObject.checkBox = 'unchecked';
             allProjects[counter + ""] = toDoObject;
         }
@@ -141,6 +145,7 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
    
     let edit = new Image();
     edit.src = editImage;
+    // edit.classList.add('edit');
     edit.addEventListener('click',()=>{
         let content = document.querySelector('.content');
         let dialog = document.createElement('dialog');
