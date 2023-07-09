@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem,10vw,1.5rem);
 }
 
 body{
@@ -38,7 +38,7 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    font-size: 3rem;
+    font-size: clamp(1rem,8.5vw,3rem);
 }
 
 
@@ -226,8 +226,8 @@ dialog button{
 }
 
 dialog input,dialog textarea{
-    width: 35rem;
-    min-height: 3rem;
+    width: min(90%,35rem);
+    max-height: 3rem;
 }
 
 .noteDiv{

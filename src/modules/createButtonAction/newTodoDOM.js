@@ -66,7 +66,15 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
         let note = document.createElement('p');
         note.textContent = toDoObject.note;
 
-        noteDiv.append(heading,note);
+        let cancelButton = document.createElement('button');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('cancelButton');
+        cancelButton.addEventListener('click',() => {
+            let dialog = document.querySelector('dialog');
+            dialog.remove();
+        })
+
+        noteDiv.append(heading,note,cancelButton);
         dialog.appendChild(noteDiv);
         content.appendChild(dialog);
         dialog.showModal()
@@ -130,7 +138,16 @@ export default function newToDoDOM(toDoObject,allProjects,counter){
         priorityPara.textContent = toDoObject.priority;
         priorityDiv.append(priorityLabel,priorityPara);
 
-        dialog.append(heading,titleDiv,descriptionDiv,projectDiv,noteDiv,dueDateDiv,priorityDiv);
+        let cancelButton = document.createElement('button');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('cancelButton');
+        cancelButton.addEventListener('click',() => {
+            let dialog = document.querySelector('dialog');
+            dialog.remove();
+        })
+
+
+        dialog.append(heading,titleDiv,descriptionDiv,projectDiv,noteDiv,dueDateDiv,priorityDiv,cancelButton);
         content.appendChild(dialog);
         dialog.showModal();
         dialog.addEventListener('keydown',escapeKey)
